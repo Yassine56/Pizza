@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Bungee+Inline');
+.top{position: fixed;
+    width: 100%;
+    z-index: 1;
+top:0;}
+.navbar{
+  color: #fff!important;
+    background-color: #000!important;
+  font-size:24px;
+  opacity:0.60;
+      list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+.navbar li{
+  float:left;
+
+}
+.navbar a{
+  display: block;
+    padding: 8px 16px;
+  text-decoration: none!important;
+      background-color: transparent;
+  font-family: "Amatic SC", sans-serif;
+  line-height: 1.5;
+      color: inherit;
+}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://www.w3schools.com/w3images/pizza.jpg);
+    min-height: 90%;
+  filter: grayscale(50%);
+  padding: 180px 16px!important;
+
+}
+.display-bottomleft {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  margin:20px;
+  font-family: 'Amatic SC', cursive;
+}
+.xlarge {
+    font-size: 24px!important;
+}
+ .tag{
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+.center {
+    text-align: center!important;
+}
+.text-white {
+font-size:80px;
+      line-height: 1.5;
+    color: #fff!important;
+  font-family: 'Amatic SC', cursive;
+}
+strong, b {
+    font-weight: bold;
+}
+
+.xxlarge {
+    font-size: 36px!important;
+}
+.btn {
+    border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 6px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none!important;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+      font-family: 'Amatic SC', cursive;
+}
+.black, .hover-black:hover {
+    color: #fff!important;
+    background-color: #000!important;
+}
+.container {
+    padding: 0.01em 16px;
+}
+.padding-64 {
+    padding-top: 64px!important;
+    padding-bottom: 64px!important;
+}
+.container:after, .panel:after, .row:after, .row-padding:after, .topnav:after, .clear:after,  .btn-group:after,  .btn-bar:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.content {
+    max-width: 980px;
+    margin: auto;
+}
+.jumbo {
+    font-size: 64px!important;
+      font-weight: 400;
+    margin: 10px 0;
+     font-family: 'Amatic SC', cursive;
+}
+
+.pizza1 { display: block;}
+.pasta { display: block; }
+.subs { display: block; }
+.salads { display: block; }
+.dinnerplaters { display: block; }
+.tab1, .tab2, .tab3, .tab4, .tab5, .tab6{
+  padding: 20px 126px;
+  font-size: 36px;
+    background-color: black;
+    color: white;
+ font-family: 'Amatic SC', cursive;
+
+}
+.tab1:hover{
+  background-color: #f44336;
+    color: white;
+}
+.tab2:hover{
+   background-color: #f44336;
+    color: white;
+  }
+.tab3:hover{
+  background-color: #f44336;
+    color: white;
+ }
+ .tab4:hover{
+   background-color: #f44336;
+     color: white;
+  }
+  .tab5:hover{
+    background-color: #f44336;
+      color: white;
+   }
+
+   .tab6:hover{
+     background-color: #f44336;
+       color: white;
+   }
+h1{
+  font-weight: 400;
+    margin: 10px 0;
+  font-family: 'Amatic SC', cursive;
+      font-size: 36px;
+  margin:20px;
+}
+.pizza1{
+  color: #000!important;
+    background-color: #fff!important;
+  padding-top: 32px!important;
+    padding-bottom: 32px!important;
+  font-family: 'Amatic SC', cursive;
+ }
+  .span {
+        border-radius: 4px!important;
+    float: right!important;
+    color: #fff!important;
+    background-color: #616161!important;
+  }
+.text{
+   margin:20px;
+  color: #757575!important;
+ }
+.pizza1 hr{
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+  box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.subs{
+  color: #000!important;
+    background-color: #fff!important;
+  padding-top: 32px!important;
+    padding-bottom: 32px!important;
+  font-family: 'Amatic SC', cursive;
+
+}
+.subs hr{
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+  box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.salads{
+  color: #000!important;
+    background-color: #fff!important;
+  padding-top: 32px!important;
+    padding-bottom: 32px!important;
+  font-family: 'Amatic SC', cursive;
+
+}
+.salads hr{
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+  box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.dinnerplaters{
+  color: #000!important;
+    background-color: #fff!important;
+  padding-top: 32px!important;
+    padding-bottom: 32px!important;
+  font-family: 'Amatic SC', cursive;
+
+}
+.dinnerplaters hr{
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+  box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.pasta{
+  color: #000!important;
+    background-color: #fff!important;
+  padding-top: 32px!important;
+    padding-bottom: 32px!important;
+  font-family: 'Amatic SC', cursive;
+
+}
+.pasta hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+  box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.about1{
+  color: #fff!important;
+    background-color: #f44336!important;
+  filter: grayscale(75%);
+  padding-top: 64px!important;
+    padding-bottom: 64px!important;
+      padding: 0.01em 50px;
+      font-size: 24px!important;
+  font-family: 'Amatic SC', cursive;
+      line-height: 1.5;
+  }
+
+.naslov1{
+  margin-bottom: 64px;
+      text-align: center!important;
+  font-size: 64px!important;
+  font-weight: 400;
+    margin: 10px 0;
+
+}
+.strong1{
+      width: 150px;
+      border-radius: 50%!important;
+  float: right!important;
+    margin-bottom: -5px;
+      border-style: none;
+}
+.col.s6 {
+    width: 40%;
+}
+
+  .col, .half, .third, .twothird, .threequarter, .quarter {
+    float: left;
+
+}
+.contact1{
+  color: #fff!important;
+    background-color: #607d8b!important;
+      filter: grayscale(50%);
+   font-family: 'Amatic SC', cursive;
+
+
+}
+.contact2{
+      text-align: center!important;
+  font-size: 64px!important;
+  padding-top: 64px!important;
+    padding-bottom: 64px!important;
+
+  }
+
+
+.span5{
+  background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+  margin:20px;
+
+}
+.ja{
+  font-size: 36px!important;
+  padding-top: 64px!important;
+    padding-bottom: 64px!important;
+  margin:40px;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+.form1{
+      padding-top: 16px!important;
+    padding-bottom: 16px!important;
+  border: 1px solid #ccc!important;
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #808080;
+    width: 90%;
+  margin:40px;
+}
+.button{
+  padding: 8px 16px!important;
+   margin:40px;
+  border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 6px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none!important;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+      width: 93%;
+  font-family: 'Amatic SC', cursive;
+  font-size: 36px!important;
+}
+  </style>
+  <script>
+  $(document).ready(function(){
+  $('.tab1').click(function(){
+  $('.pizza1').css('display','block');
+  $('.subs').css('display', 'none');
+  $('.pasta').css('display', 'none');
+  $('.salads').css('display', 'none');
+  $('.dinnerplaters').css('display', 'none');
+  });
+  $('.tab2').click(function(){
+  $('.subs').css('display', 'block')
+  $('.pasta').css('display', 'none');
+  $('.pizza1').css('display', 'none');
+  $('.salads').css('display', 'none');
+  $('.dinnerplaters').css('display', 'none');
+
+  });
+  $('.tab3').click(function(){
+  $('.pasta').css('display', 'block')
+  $('.pizza1').css('display', 'none');
+  $('.subs').css('display', 'none');
+  $('.salads').css('display', 'none');
+  $('.dinnerplaters').css('display', 'none');
+  });
+  $('.tab4').click(function(){
+  $('.salads').css('display', 'block')
+  $('.pizza1').css('display', 'none');
+  $('.subs').css('display', 'none');
+  $('.pasta').css('display', 'none');
+  $('.dinnerplaters').css('display', 'none');
+  });
+  $('.tab5').click(function(){
+  $('.dinnerplaters').css('display', 'block')
+  $('.pizza1').css('display', 'none');
+  $('.subs').css('display', 'none');
+  $('.pasta').css('display', 'none');
+  $('.salads').css('display', 'none');
+  });
+  });
+  </script>
+</head>
+<body >
+<div class="top">
+    <ul class="navbar " id="mynavbar">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#menu">MENU</a></li>
+      <li><a href="#about">ORDER</a></li>
+      <li><a href="#googlemap">CONTACT</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      {% else %}
+      <li><a href="{% url "register" %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {% endif %}
+    </ul>
+     </div>
+<header class="bgimg display-container grayscale-min" id="home">
+  <div class="display-bottomleft padding">
+    <span class="tag xlarge">Open from 10am to 12pm</span>
+  </div>
+  <div class="display-middle center">
+  <span class="text-white hide-large hide-medium" ><b>Pinocchio's<br>Pizza & Subs</b></span>
+    <p><a href="#menu" class="btn xxlarge padding">Let me see the menu</a></p>
+  </div>
+</header>
+<div class="container black padding-64 xxlarge" id="menu">
+  <div class="content">
+
+    <h1 class="center jumbo" style="margin-bottom:64px">THE MENU</h1>
+  <div>
+    <button class="tab1">PIZZA</button>
+    <button class="tab2">SUBS</button>
+    <button class="tab3">PASTA</button>
+    <button class="tab4">SALADS</button>
+    <button class="tab5">DINNRE PLATERS</button>
+    <button class="tab6"><a href="{% url "makeorder" %}">ORDER NOW</a></button>
+</div>
+  <div id="Pizza" class="pizza1">
+      <h1><b>Regular Pizza</b> <span class="span">from $11.70</span></h1>
+      <p class="text">Fresh tomatoes, fresh mozzarella, fresh basil with extra toppings</p>
+      <hr>
+
+      <h1><b>Sicilian Pizza</b> <span class="span">from $22.45</span></h1>
+      <p class="text">Four cheeses (mozzarella, parmesan, pecorino, jarlsberg) with extra toppings</p>
+      <hr>
+    </div>
+
+    <div id="Pasta" class="subs">
+      <h1><b>Cheese</b> <span class="span1">Popular</span> <span class="span">from $6.50</span></h1>
+      <p class="text">bread, cheese huh fun</p>
+      <hr>
+
+      <h1><b>Italian</b> <span class="span">from $6.50</span></h1>
+      <p class="text">bread, italien huh fun</p>
+      <hr>
+
+      <h1><b>Ham + Cheese</b> <span class="span">from $6.50</span></h1>
+      <p class="text">Ham + cheese hmmm</p>
+      <hr>
+
+      <h1><b>Meatball</b> <span class="span">from $6.50</span></h1>
+      <p class="text">meatball bread etc..</p>
+
+      <h1><b>Tuna</b> <span class="span1">Seasonal</span><span class="span">from $6.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+
+      <h1><b>Turkey</b> <span class="span">from $7.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+
+      <h1><b>Chicken Parmigiana</b> <span class="span">from $7.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Eggplant Parmigiana</b> <span class="span">from $6.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Steak</b> <span class="span">from $6.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Steak + Cheese</b> <span class="span">from $6.95</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Sausage, Peppers & Onions</b> <span class="span">from $8.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Hamburger</b> <span class="span">from $4.60</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Cheeseburger</b> <span class="span">from $6.95</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Veggie</b> <span class="span">from $6.95</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>+ Mushrooms</b> <span class="span">+$0.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>+ Green Peppers</b> <span class="span">+$0.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>+ Onions</b> <span class="span">+$0.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Extra Cheese on any sub</b> <span class="span">+$0.50</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+    </div>
+  <div id="Starter" class="pasta" >
+    <h1><b>Baked Ziti w/Mozzarella</b> <span class="span1">Popular</span> <span class="span">from $6.50</span></h1>
+    <p class="text">Ask the waiter</p>
+    <hr>
+    <h1><b>Baked Ziti w/Meatballs</b> <span class="span1">Popular</span> <span class="span">from $8.75</span></h1>
+    <p class="text">Ask the waiter</p>
+    <hr>
+    <h1><b>Baked Ziti w/Chicken</b> <span class="span1">Popular</span> <span class="span">from $9.75</span></h1>
+    <p class="text">Ask the waiter</p>
+    <hr>
+    </div>
+    <div id="Starter" class="salads" >
+      <h1><b>Garden Salad</b> <span class="span1">Popular</span> <span class="span">from $6.25</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Greek Salad</b> <span class="span1">Popular</span> <span class="span">from $8.25</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Antipasto</b> <span class="span1">Popular</span> <span class="span">from $8.25</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      <h1><b>Salad w/Tuna</b> <span class="span1">Popular</span> <span class="span">from $8.25</span></h1>
+      <p class="text">Ask the waiter</p>
+      <hr>
+      </div>
+      <div id="Starter" class="dinnerplaters" >
+        <h1><b>Garden Salad</b> <span class="span1">Popular</span> <span class="span">from $35.00</span></h1>
+        <p class="text">Ask the waiter</p>
+        <hr>
+        <h1><b>Greek Salad</b> <span class="span1">Popular</span> <span class="span">from $45.00</span></h1>
+        <p class="text">Ask the waiter</p>
+        <hr>
+        <h1><b>Antipasto</b> <span class="span1">Popular</span> <span class="span">from $45.00</span></h1>
+        <p class="text">Ask the waiter</p>
+        <hr>
+        <h1><b>Baked Ziti</b> <span class="span1">Popular</span> <span class="span">from $35.00</span></h1>
+        <p class="text">Ask the waiter</p>
+        <hr>
+        <h1><b>Meatball Parm</b> <span class="span1">Popular</span> <span class="span">from $45.00</span></h1>
+        <p class="text">Ask the waiter</p>
+        <hr>
+        <h1><b>Chicken Parm</b> <span class="span1">Popular</span> <span class="span">from $45.00</span></h1>
+        <p class="text">Ask the waiter</p>
+        <hr>
+        </div>
+    <div class="about1" id="about">
+      <div class="naslov">
+        <button class="naslov1"><h1 class="naslov1"><a href="{% url "makeorder" %}">ORDER</a></h1></button>
+        <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p><strong>The Chef?</strong> Mr. Pinochio himself<img src="https://www.w3schools.com/w3images/chef.jpg" style="width:150px" class="strong1" alt="Chef"></p>
+        <p>We are proud of our interiors.</p>
+        <img src="https://i.pinimg.com/originals/7d/69/fd/7d69fde2d6ac1af590661e21ff5f7557.jpg" style="width:100%" class="restoran" alt="Restaurant">
+        <h1><b>Opening Hours</b></h1>
+       <div class="row">
+      <div class="col s6">
+        <p>Mon &amp; Tue CLOSED</p>
+        <p>Wednesday 10.00 - 24.00</p>
+        <p>Thursday 10:00 - 24:00</p>
+      </div>
+      <div class="w3-col s6">
+        <p>Friday 10:00 - 12:00</p>
+        <p>Saturday 10:00 - 23:00</p>
+        <p>Sunday Closed</p>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.257443010448!2d20.460272015972482!3d44.81631967909859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7ab3bd6ab05f%3A0x5bbff528e40d2fcc!2sPizzeria+Caribic!5e0!3m2!1ssr!2srs!4v1479895379177" width="980" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+    <div id="contact">
+      <div class="contact1">
+        <h1 class="contact2">CONTACT</h1>
+        <p>Find us at some address at some place or call us at 05050515-122330</p>
+        <p><span class="span5">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and  we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+        <p class="ja"><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
+
+
+        <form action="form.asp" target="_blank">
+      <p><input class="form1" type="text" placeholder="Name" required="" name="Name"></p>
+      <p><input class="form1" type="number" placeholder="How many people" required="" name="People"></p>
+      <p><input class="form1" type="datetime-local" placeholder="Date and time" required="" name="date" value="2017-11-16T20:00"></p>
+      <p><input class="form1" type="text" placeholder="Message \ Special requirements" required="" name="Message"></p>
+      <p><button class="button" type="submit">SEND MESSAGE</button></p>
+    </form>
+      </div>
+    </div>
+  </body>
+  </html>
