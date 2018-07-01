@@ -10,5 +10,5 @@ urlpatterns = [
     path("/makeorder", views.makeorder, name="makeorder"),
     path("/confirmorder", views.confirmorder, name="confirmorder"),
     path("/confirmedorder", views.confirmedorder, name="confirmedorder"),
-
+    
 ]
